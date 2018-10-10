@@ -1,0 +1,26 @@
+<div class="items-list">
+    <div class="row">
+        <div *ngFor="let item of demo_items" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img src="{{item.pic}}" class="item-pic" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label name="item name">{{item.name}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label name="item price" class="item-price">{{item.price}} HKD</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>{{item.desc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
