@@ -25,7 +25,7 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
     'name': 'Wine - Penfolds Koonuga Hill',
     'pic': 'http://dummyimage.com/200x200.bmp/ff4444/ffffff',
     'price': 379.17,
-    'desc': 'hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero'
+    'desc': 'hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis'
   }, {
     'id': 4,
     'name': 'Sorrel - Fresh',
@@ -61,13 +61,13 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
     'name': 'Wine - Kwv Chenin Blanc South',
     'pic': 'http://dummyimage.com/200x200.png/5fa2dd/ffffff',
     'price': 100.52,
-    'desc': 'nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur'
+    'desc': 'nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis'
   }, {
     'id': 10,
     'name': 'Wine - Tribal Sauvignon',
     'pic': 'http://dummyimage.com/200x200.png/dddddd/000000',
     'price': 298.99,
-    'desc': 'molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue'
+    'desc': 'molestie lorem quisque ut erat curabitur gravida nisi at nibh in'
   }];
 
   constructor() { }
