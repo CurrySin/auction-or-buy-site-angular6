@@ -15,4 +15,27 @@ export class ProductService {
             return products;
         }));
     }
+
+    create(body: any, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'token': JSON.parse(token)
+        })};
+        return this.http.post<any>(`${environment.baseUrl + 'products/create'}`, body, httpOptions)
+        .pipe(map(result => {
+            return result;
+        }));
+    }
+
+    uploadImage(from_data: any, productId: string, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'token': JSON.parse(token)
+        })};
+        return this.http.post<any>(`${environment.baseUrl + 'products/' + productId + '/upload_image'}`, from_data, httpOptions)
+        .pipe(map(result => {
+            return result;
+        }));
+    }
 }

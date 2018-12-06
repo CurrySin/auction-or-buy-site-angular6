@@ -132,4 +132,18 @@ export class UserService {
             return result;
         }));
     }
+
+    refreshToken(username: string, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'token': JSON.parse(token)
+        })};
+        return this.http.post<any>(`${environment.baseUrl + 'user/refresh/' + username}`, {}, httpOptions)
+        .pipe(map(result => {
+            localStorage.setItem('accessToken', JSON.stringify(result.accessToken));
+                localStorage.setItem('refreshToken', JSON.stringify(result.refreshToken));
+            return result;
+        }));
+    }
 }

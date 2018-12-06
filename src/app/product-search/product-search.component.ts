@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ProductService } from './../service/product.service';
@@ -15,6 +15,9 @@ export class ProductSearchComponent implements OnInit {
   dialogTitle: string;
   dialogBody: string;
   searchKey: string;
+  @Output() searchChange: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
+  private productList: Array<any>;
+
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,
@@ -35,8 +38,10 @@ export class ProductSearchComponent implements OnInit {
             // router to home page
             this.spinnerService.hide();
             if (data.length > 0) {
+              this.searchChange.emit(data);
+              console.log('data');
               localStorage.setItem('search_ressult', JSON.stringify(data));
-              this.router.navigate(['/product/result']);
+              // this.router.navigate(['/product/result']);
             } else {
               this.dialogTitle = 'Search Done';
               this.dialogBody = 'found 0 from keyword: ' + this.searchKey;
