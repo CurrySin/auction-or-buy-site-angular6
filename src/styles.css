@@ -50,3 +50,8 @@
     bottom: 0px;
     margin: 10px;
 }
+
+.product_button {
+    float: right;
+    margin: 0px 0px 25px 150px;
+}
