@@ -1,4 +1,8 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { UserService } from './../service/user.service';
+import { first } from 'rxjs/operators';
 
 declare const $: any;
 
@@ -10,7 +14,11 @@ declare const $: any;
 export class ItemsListComponent implements OnInit, AfterViewInit {
   @Input() products: Array<any> = [];
 
-  constructor() { }
+  constructor(
+    private spinnerService: Ng4LoadingSpinnerService,
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     // const local_result = localStorage.getItem('search_ressult');
@@ -21,6 +29,12 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // $('html, body').animate({ scrollTop: 0 }, 'slow');
+  }
+
+  onGoItClicked(product: any) {
+    console.log(product);
+    localStorage.setItem('storage_product', product);
+    this.router.navigate(['/product/detail']);
   }
 
 }

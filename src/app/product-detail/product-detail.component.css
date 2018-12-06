@@ -28,10 +28,11 @@ input[type=submit]:hover {
 }
 
 .container {
-    border-radius: 5px;
     position: center;
-    background-color: #d0ccdb;
-    padding: 20px;
+    border: 2px solid #E6E6E6;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 20px 0 20px 400px;
 }
 
 .back {

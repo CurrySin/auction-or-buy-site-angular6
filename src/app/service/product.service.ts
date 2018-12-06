@@ -38,4 +38,18 @@ export class ProductService {
             return result;
         }));
     }
+
+    searchByCategroy(categroy: string) {
+        return this.http.get(`${environment.baseUrl + 'products/search/category/' + categroy}`)
+        .pipe(map(products => {
+            return products;
+        }));
+    }
+
+    searchBySubCategroy(sub_categroy: string) {
+        return this.http.get(`${environment.baseUrl + 'products/search/sub_category/' + sub_categroy}`)
+        .pipe(map(products => {
+            return products;
+        }));
+    }
 }

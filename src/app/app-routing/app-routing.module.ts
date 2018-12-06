@@ -18,6 +18,7 @@ import { UserMailboxInboxComponent } from '../user-mailbox-inbox/user-mailbox-in
 import { UserMailboxDetailComponent } from '../user-mailbox-detail/user-mailbox-detail.component';
 import { ProductSearchResultComponent } from '../product-search-result/product-search-result.component';
 import { UserPasswordRenewComponent } from '../user-password-renew/user-password-renew.component';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,9 @@ const routes: Routes = [
     }, {
       path: 'result',
       component: ProductSearchResultComponent
+    }, {
+      path: 'detail',
+      component: ProductDetailComponent
     }]
   }
 ];

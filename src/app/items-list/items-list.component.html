@@ -9,8 +9,14 @@
                     <div class="bottom-line"></div>
                     <p class="card-text">{{product.sub_title}}</p>
                     <div class="bottom-line"></div>
-                    <button *ngIf="product.type==='auction'" href="#" class="btn btn-primary btn-item">Go Bid it</button>
-                    <button *ngIf="product.type==='buy'" href="#" class="btn btn-primary btn-item">Go Get it</button>
+                    <div *ngIf="product.type==='auction'">
+                        <button (click)="onGoItClicked(product)" href="#" class="btn btn-primary btn-item product_button">Go Bid it</button>
+                        <h4>$ {{product.price}}</h4>
+                    </div>
+                    <div *ngIf="product.type==='buy'">
+                        <button (click)="onGoItClicked(product)" href="#" class="btn btn-primary btn-item product_button">Go Get it</button>
+                        <h4>$ {{product.price}}</h4>
+                    </div>
                 </div>
             </div>
             <!-- <div class="row">

@@ -4,112 +4,131 @@
     <div class="menu-list">
         <ul id="menu-content" class="menu-content collapse out">
             <!-- WOMEN -->
-            <li data-toggle="collapse" data-target="#women" class="collapsed">
-                <a href="#"><i class="fa fa-female fa-lg"></i>WOMEN<span class="arrow"></span></a>
+            <li (click)="searchByCategory('WOMEN')" data-toggle="collapse" data-target="#women" class="collapsed">
+                <a><i class="fa fa-female fa-lg"></i>WOMEN<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="women">
                 <li data-toggle="collapse" data-target="#women-tops" class="collapsed">
                     <a href="#"><i class="fa fa-tshirt fa-lg"></i>TOPS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="women-tops">
-                    <li><a href="#">Knit Tops</a></li>
-                    <li><a href="#">Short Sleeves Graphic Tee</a></li>
-                    <li><a href="#">Long Sleeves Graphic Tee</a></li>
-                    <li><a href="#">Polo Shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Sweaters</a></li>
-                    <li><a href="#">Sweatshirts</a></li>
+                    <li (click)="searchBySubCategory('Knit Tops')"><a href="#">Knit Tops</a></li>
+                    <li (click)="searchBySubCategory('Short Sleeves Graphic Tee')"><a href="#">Short Sleeves Graphic Tee</a></li>
+                    <li (click)="searchBySubCategory('Long Sleeves Graphic Tee')"><a href="#">Long Sleeves Graphic Tee</a></li>
+                    <li (click)="searchBySubCategory('Polo Shirts')"><a href="#">Polo Shirts</a></li>
+                    <li (click)="searchBySubCategory('Shirts')"><a href="#">Shirts</a></li>
+                    <li (click)="searchBySubCategory('Sweaters')"><a href="#">Sweaters</a></li>
+                    <li (click)="searchBySubCategory('Sweatshirts')"><a href="#">Sweatshirts</a></li>
                 </ul>
                 <li data-toggle="collapse" data-target="#women-bottoms" class="collapsed">
                     <a href="#"><i class="fa fa-gift fa-lg"></i>BOTTOMS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="women-bottoms">
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="#">Shorts</a></li>
-                    <li><a href="#">Pants</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Sports Pants</a></li>
-                    <li><a href="#">Leggings</a></li>
+                    <li (click)="searchBySubCategory('Skirts')"><a href="#">Skirts</a></li>
+                    <li (click)="searchBySubCategory('Shorts')"><a href="#">Shorts</a></li>
+                    <li (click)="searchBySubCategory('Pants')"><a href="#">Pants</a></li>
+                    <li (click)="searchBySubCategory('Jeans')"><a href="#">Jeans</a></li>
+                    <li (click)="searchBySubCategory('Sports Pants')"><a href="#">Sports Pants</a></li>
+                    <li (click)="searchBySubCategory('Leggings')"><a href="#">Leggings</a></li>
                 </ul>
             </ul>
             <!-- MEN -->
-            <li data-toggle="collapse" data-target="#men" class="collapsed active">
-                <a href="#"><i class="fa fa-male fa-lg"></i>MEN<span class="arrow"></span></a>
+            <li (click)="searchByCategory('MEN')" data-toggle="collapse" data-target="#men" class="collapsed active">
+                <a><i class="fa fa-male fa-lg"></i>MEN<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="men">
                 <li data-toggle="collapse" data-target="#men-tops" class="collapsed">
                     <a href="#"><i class="fa fa-tshirt fa-lg"></i>TOPS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="men-tops">
-                    <li><a href="#">Short Sleeves Tee</a></li>
-                    <li><a href="#">Long Sleeves Tee</a></li>
-                    <li><a href="#">Polo Shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Sweaters</a></li>
-                    <li><a href="#">Sweatshirts</a></li>
+                    <li (click)="searchBySubCategory('Short Sleeves Tee')"><a href="#">Short Sleeves Tee</a></li>
+                    <li (click)="searchBySubCategory('Long Sleeves Tee')"><a href="#">Long Sleeves Tee</a></li>
+                    <li (click)="searchBySubCategory('Polo Shirts')"><a href="#">Polo Shirts</a></li>
+                    <li (click)="searchBySubCategory('Shirts')"><a href="#">Shirts</a></li>
+                    <li (click)="searchBySubCategory('Sweaters')"><a href="#">Sweaters</a></li>
+                    <li (click)="searchBySubCategory('Sweatshirts')"><a href="#">Sweatshirts</a></li>
                 </ul>
                 <li data-toggle="collapse" data-target="#men-bottoms" class="collapsed">
                     <a href="#"><i class="fa fa-gift fa-lg"></i>BOTTOMS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="men-bottoms">
-                    <li><a href="#">Shorts</a></li>
-                    <li><a href="#">Pants</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Sports Pants</a></li>
+                    <li (click)="searchBySubCategory('Shorts')"><a href="#">Shorts</a></li>
+                    <li (click)="searchBySubCategory('Pants')"><a href="#">Pants</a></li>
+                    <li (click)="searchBySubCategory('Jeans')"><a href="#">Jeans</a></li>
+                    <li (click)="searchBySubCategory('Sports Pants')"><a href="#">Sports Pants</a></li>
                 </ul>
             </ul>
             <!-- BOYS -->
-            <li data-toggle="collapse" data-target="#boys" class="collapsed active">
-                <a href="#"><i class="fa fa-child fa-lg"></i>BOYS<span class="arrow"></span></a>
+            <li (click)="searchByCategory('BOYS')" data-toggle="collapse" data-target="#boys" class="collapsed active">
+                <a><i class="fa fa-child fa-lg"></i>BOYS<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="boys">
                 <li data-toggle="collapse" data-target="#boys-tops" class="collapsed">
                     <a href="#"><i class="fa fa-tshirt fa-lg"></i>TOPS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="boys-tops">
-                    <li><a href="#">Short Sleeves Tee</a></li>
-                    <li><a href="#">Long Sleeves Tee</a></li>
-                    <li><a href="#">Polo Shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Sweaters</a></li>
-                    <li><a href="#">Sweatshirts</a></li>
+                    <li (click)="searchBySubCategory('Short Sleeves Tee')"><a href="#">Short Sleeves Tee</a></li>
+                    <li (click)="searchBySubCategory('Long Sleeves Tee')"><a href="#">Long Sleeves Tee</a></li>
+                    <li (click)="searchBySubCategory('Polo Shirts')"><a href="#">Polo Shirts</a></li>
+                    <li (click)="searchBySubCategory('Shirts')"><a href="#">Shirts</a></li>
+                    <li (click)="searchBySubCategory('Sweaters')"><a href="#">Sweaters</a></li>
+                    <li (click)="searchBySubCategory('Sweatshirts')"><a href="#">Sweatshirts</a></li>
                 </ul>
                 <li data-toggle="collapse" data-target="#boys-bottoms" class="collapsed">
                     <a href="#"><i class="fa fa-gift fa-lg"></i>BOTTOMS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="boys-bottoms">
-                    <li><a href="#">Shorts</a></li>
-                    <li><a href="#">Pants</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Sports Pants</a></li>
+                    <li (click)="searchBySubCategory('Shorts')"><a href="#">Shorts</a></li>
+                    <li (click)="searchBySubCategory('Pants')"><a href="#">Pants</a></li>
+                    <li (click)="searchBySubCategory('Jeans')"><a href="#">Jeans</a></li>
+                    <li (click)="searchBySubCategory('Sports Pants')"><a href="#">Sports Pants</a></li>
                 </ul>
             </ul>
             <!-- GRILS -->
-            <li data-toggle="collapse" data-target="#girls" class="collapsed active">
-                <a href="#"><i class="fa fa-child fa-lg"></i>GIRLS<span class="arrow"></span></a>
+            <li (click)="searchByCategory('GIRLS')" data-toggle="collapse" data-target="#girls" class="collapsed active">
+                <a><i class="fa fa-child fa-lg"></i>GIRLS<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="girls">
                 <li data-toggle="collapse" data-target="#girls-tops" class="collapsed">
                     <a href="#"><i class="fa fa-tshirt fa-lg"></i>TOPS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="girls-tops">
-                    <li><a href="#">Knit Tops</a></li>
-                    <li><a href="#">Short Sleeves Tee</a></li>
-                    <li><a href="#">Long Sleeves Tee</a></li>
-                    <li><a href="#">Sweaters</a></li>
-                    <li><a href="#">Sweatshirts</a></li>
+                    <li (click)="searchBySubCategory('Knit Tops')"><a href="#">Knit Tops</a></li>
+                    <li (click)="searchBySubCategory('Short Sleeves Tee')"><a href="#">Short Sleeves Tee</a></li>
+                    <li (click)="searchBySubCategory('Long Sleeves Tee')"><a href="#">Long Sleeves Tee</a></li>
+                    <li (click)="searchBySubCategory('Sweaters')"><a href="#">Sweaters</a></li>
+                    <li (click)="searchBySubCategory('Sweatshirts')"><a href="#">Sweatshirts</a></li>
                 </ul>
                 <li data-toggle="collapse" data-target="#girls-bottoms" class="collapsed">
                     <a href="#"><i class="fa fa-gift fa-lg"></i>BOTTOMS<span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="girls-bottoms">
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="#">Shorts</a></li>
-                    <li><a href="#">Pants & Leggings</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Sports Pants</a></li>
+                    <li (click)="searchBySubCategory('Skirts')"><a href="#">Skirts</a></li>
+                    <li (click)="searchBySubCategory('Shorts')"><a href="#">Shorts</a></li>
+                    <li (click)="searchBySubCategory('Pants & Leggings')"><a href="#">Pants & Leggings</a></li>
+                    <li (click)="searchBySubCategory('Jeans')"><a href="#">Jeans</a></li>
+                    <li (click)="searchBySubCategory('Sports Pants')"><a href="#">Sports Pants</a></li>
                 </ul>
             </ul>
         </ul>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{dialogTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{dialogBody}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>

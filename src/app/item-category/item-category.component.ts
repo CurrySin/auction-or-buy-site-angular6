@@ -1,6 +1,10 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ProductService } from './../service/product.service';
+import { first } from 'rxjs/operators';
 
-declare let $: any;
+declare const $: any;
 
 @Component({
   selector: 'app-item-category',
@@ -10,8 +14,15 @@ declare let $: any;
 export class ItemCategoryComponent implements OnInit, AfterViewInit {
   lastScrollTop = 0;
   sidebar = 200;
+  dialogTitle: string;
+  dialogBody: string;
+  @Output() searchChange: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
 
-  constructor() { }
+  constructor(
+    private spinnerService: Ng4LoadingSpinnerService,
+    private productService: ProductService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -33,4 +44,39 @@ export class ItemCategoryComponent implements OnInit, AfterViewInit {
     });
   }
 
+  searchByCategory(category: string) {
+    this.spinnerService.show();
+    this.productService.searchByCategroy(category)
+            .pipe(first())
+            .subscribe(
+                (data: any) => {
+                    // router to home page
+                    this.spinnerService.hide();
+                    this.searchChange.emit(data);
+                },
+                err => {
+                  this.spinnerService.hide();
+                  this.dialogTitle = 'Search Failed';
+                  this.dialogBody = 'Please try angin';
+                  $('#myModal').modal('show');
+                });
+  }
+
+  searchBySubCategory(sub_category: string) {
+    this.spinnerService.show();
+    this.productService.searchBySubCategroy(sub_category)
+            .pipe(first())
+            .subscribe(
+                (data: any) => {
+                    // router to home page
+                    this.spinnerService.hide();
+                    this.searchChange.emit(data);
+                },
+                err => {
+                  this.spinnerService.hide();
+                  this.dialogTitle = 'Search Failed';
+                  this.dialogBody = 'Please try angin';
+                  $('#myModal').modal('show');
+                });
+  }
 }
