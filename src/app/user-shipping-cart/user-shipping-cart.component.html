@@ -1,0 +1,79 @@
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <div class="container">
+        <!-- <app-item-type-horizon></app-item-type-horizon> -->
+    </div>
+</div>
+
+
+<div *ngFor="let item of demo_items">
+    <div class="container0">
+        <div class="row">
+            <div class="col-1">
+                <div style="margin-left: 30px;" class="container5">
+                    <input type="checkbox" id="exampleCheck1">
+                    <label></label>
+                </div>
+            </div>
+
+            <div class="col-1">
+                <div class="container1">
+                    <img style="margin-left: 10px; width: 120px; height: 120px;" src="{{item.pic}}">
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div style="margin-left: 30px;" class="container1">
+                    <h4>Item Name</h4>
+                    <h5>{{item.name}}</h5>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div style="margin-left: 30px;" class="container1">
+                    <h4>Seller Name
+                    </h4>
+                    <h5>{{item.seller}}</h5>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div style="margin-left: 30px;" class="container1">
+                    <h4>Price</h4>
+                    <h5>${{item.price}}</h5>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div style="margin-left: 30px;" class="container1">
+                    <h4>Quantity</h4>
+                    <h5>{{item.quantity}}</h5>
+                </div>
+            </div>
+
+            <div style="align-self: flex-end;" class="col-2">
+                <div style="margin-left: 30px;" class="container3">
+                    <button>Remove</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 10px; margin-bottom: 300px;" class="container0">
+    <div class="row">
+        <div class="col-9">
+            <div class="container4">
+                <input type="checkbox">
+                <label>　Select All</label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="container4">
+                <button style="align-self: flex-end;">Pay Now</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

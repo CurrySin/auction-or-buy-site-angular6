@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-light">
     <div class="row">
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" [routerLink]="['/']">
                 <img src="./../../assets/demo_icon.png" height="50" alt="AuctionOrBuy">
             </a>
         </div>
@@ -11,17 +11,17 @@
     </div>
     <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="./../../assets/demo_shipping_cart.png" alt="Shopping Cart" width="50" height="50"></a>
+            <a [routerLink]="['/user/shipping_cart']"><img src="./../../assets/demo_shipping_cart.png" alt="Shopping Cart" width="50" height="50"></a>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="./../../assets/demo_auction.png" alt="Shopping Cart" width="50" height="50"></a>
+            <a [routerLink]="['/product/create']"><img src="./../../assets/demo_auction.png" alt="Auction" width="50" height="50"></a>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="./../../assets/demo_favorite.png" alt="Shopping Cart" width="50" height="50"></a>
+            <a [routerLink]="['/user/favorite']"><img src="./../../assets/demo_favorite.png" alt="Favorite" width="50" height="50"></a>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="./../../assets/demo_message.png" alt="Shopping Cart" width="50" height="50"></a>
+            <a [routerLink]="['/user/mailbox']"><img src="./../../assets/demo_message.png" alt="Message" width="50" height="50"></a>
         </div>
     </div>
-    <a href="#"><img src="./../../assets/demo_user.png" alt="Shopping Cart" width="50" height="50"></a>
+    <a href="#" [routerLink]="['/login']"><img src="./../../assets/demo_user.png" alt="User" width="50" height="50"></a>
 </nav>

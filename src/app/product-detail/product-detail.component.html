@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div *ngFor="let item of demo_items" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form action="/action_page.php">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 back">
+                    <a href="/#"><img src="./../../assets/back.jpg" height="50" alt="back" /></a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img src="{{item.pic}}" class="item-pic" />
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label name="iname">Item Name: </label>
+                    </div>
+                    <div class="col-25">
+                        <label name="item name">{{item.name}}</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="condition">Condition:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="timeleft">Time left:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="currentbid">Current bid:</label>
+                </div>
+                <div class="row">
+                    <label>Seller Name:</label>
+                </div>
+                <div class="row">
+                    <label>Ranking:</label>
+                </div>
+                <div class="row">
+                    <input type="number" class="col-xs-4 col-sm-4 col-md-4 col-lg-4" name="username" placeholder="Enter the money">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

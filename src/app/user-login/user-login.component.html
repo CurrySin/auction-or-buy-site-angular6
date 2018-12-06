@@ -1,0 +1,73 @@
+<div class="row justify-content-md-center">
+    <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0">
+        <img src="./../../assets/demo_icon.png" class="margin-50" height="100" alt="Icon">
+    </div>
+</div>
+<div class="container">
+    <form actions=".php">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label name="user name">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input type="text" class="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6" [(ngModel)]="username" name="username" placeholder="Username" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label name="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input type="password" class="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6" [(ngModel)]="password" name="userpassword" placeholder="Password" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a routerLink="/user/register" routerLinkActive="active">Register?</a>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a routerLink="/user/forgot_password" routerLinkActive="active">Forgot Password?</a>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a routerLink="/user/verify" routerLinkActive="active">Active Account?</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <a (click)="onSubmit()"><input class="btn btn-primary width-full" value="Submit"></a>
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="myModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{dialogTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                {{dialogBody}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.container {
+    border-radius: 5px;
+    float: left;
+    width: 100%;
+    background-color: #64ecbf;
+    padding: 20px;
+    height: stretch;
+}
+
+.container1 {
+    border-radius: 5px;
+    float: left;
+    width: 100%;
+    background-color: #D8D8D8;
+    padding: 20px;
+    height: stretch;
+}
+
+.sender {
+    font-size: 17px;
+}
+
+.receiver {
+    font-size: 17px;
+}
+
+.date {
+    font-size: 17px;
+}
+
+.mail-option {
+    margin-top: 30px;
+}

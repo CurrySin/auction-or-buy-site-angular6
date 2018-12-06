@@ -1,0 +1,60 @@
+<div class="container">
+    <form>
+
+
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Enter Title" name="title" required><br>
+
+        <label for="Subtitle"><b>SubTitle</b></label>
+        <input type="text" placeholder="Enter Subtitle" name="Subtitle" required><br>
+
+        <form action="/action_page.php">
+            <input type="file" id="real">
+            <input type="file" id="real">
+            <input type="file" id="real">
+            <span id="custom-text"></span>
+        </form><br>
+
+        <label><li><input #sell type="radio" name="cik" (change)="0" ><b type="text">Sell</b></li></label><br>
+        <label><li><input #auction type="radio" name="cik" (change)="0"><b type="text">Auction</b></li></label>
+
+
+
+        <div *ngIf="sell.checked">
+
+
+            <label for="sellPrice"><b>Price:</b></label>
+            <input type="number" name="sellPrice" placeholder="Enter Price" required><br>
+
+            <label for="sellQuantity"><b>Quantity:</b></label>
+            <input type="number" name="sellQuantity" placeholder="Enter Quantity" required>
+            <h1></h1>
+            <input type="submit" value="Submit">
+
+
+        </div>
+        <div *ngIf="auction.checked">
+
+
+            <b type="text">Duratio</b><br>
+            <input type="date" id="start" name="trip-start" value="2018-01-01" min="2018-01-01" max="2020-12-31"> <br>
+
+            <label for="AucPrice"><b>Price:</b></label>
+            <input type="number" name="AucPrice" placeholder="Enter Price" required><br>
+
+            <label for="Startbid"><b>Start Bid:</b></label>
+            <input type="number" name="Startbid" placeholder="Enter Start Bid Price" required><br>
+
+            <label for="Perbid"><b>Per Bid:</b></label>
+            <input type="number" name="Perbid" placeholder="Enter Per Bid Price" required><br>
+
+            <h1></h1>
+            <label for="aucQuantity"><b>Quantity:</b></label>
+            <input type="number" name="aucQuantity" value="1">
+            <h1></h1>
+            <input type="submit" value="Submit">
+
+
+        </div>
+    </form>
+</div>

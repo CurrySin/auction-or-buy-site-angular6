@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0">
+            <img src="./../../assets/demo_user.png" class="margin-20" alt="Shopping Cart" width="75" height="75" />
+        </div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <label name="UserNameAndId" class="margin-40-0-0-30">{{username}}</label>
+        </div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <input type="button" class="btn btn-outline-secondary margin-40-40-0-0 float-right" (click)="onLogout()" value="Logout">
+            <input routerLink="/user/update" type="button" class="btn btn-outline-secondary margin-40-40-0-0 float-right" value="Update">
+        </div>
+    </div>
+    <div class="bottom-line"></div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="btn-group margin-0-0-20-0">
+                <input type="button" class="btn btn-outline-secondary" value="Your Order">
+                <input type="button" class="btn btn-outline-secondary" value="Your Address">
+                <input type="button" class="btn btn-outline-secondary" value="Your Record">
+                <input routerLink="/user/balance" type="button" class="btn btn-outline-secondary" value="Payment">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="container">
+            <h1><b>Recommend</b></h1>
+            <div class="row">
+                <div *ngFor="let item of demo_items" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <img src="{{item.pic}}" class="item-pic" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label name="item name">{{item.name}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label name="item price" class="item-price">{{item.price}} HKD</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p>{{item.desc}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="container">
+            <h1><b>History</b></h1>
+            <div *ngFor="let item of demo_items">
+                <div class="item-list">
+                    <div class="form-inline">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <img src="{{item.pic}}" class="item-pic" width="80" height="80" />
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                            <label name="item name">{{item.name}}</label>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <label name="item price">{{item.price}} HKD</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

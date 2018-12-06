@@ -6,6 +6,7 @@
 
 .component-outlet {
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .navigation-footer {
