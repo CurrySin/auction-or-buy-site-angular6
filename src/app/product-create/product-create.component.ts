@@ -91,7 +91,7 @@ export class ProductCreateComponent implements OnInit {
               // router to home page
               this.spinnerService.hide();
               console.log(data);
-              const productImage = document.getElementById('productImage').files[0];
+              const productImage = $('#productImage').files[0];
               const input = new FormData();
               if (productImage) {
                 this.spinnerService.show();
@@ -167,7 +167,7 @@ export class ProductCreateComponent implements OnInit {
             data => {
               // router to home page
               this.spinnerService.hide();
-              const productImage = document.getElementById('productImage').files[0];
+              const productImage = $('#productImage').files[0];
               const input = new FormData();
               if (productImage) {
                 this.spinnerService.show();
