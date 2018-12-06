@@ -43,11 +43,14 @@ export class UserMailboxInboxComponent implements OnInit {
                   this.dialogBody = 'Please try angin';
                   $('#myModal').modal('show');
                 });
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 
   onClicked(mail) {
-    console.log(mail);
+    localStorage.setItem('mail_id', mail._id);
+    this.router.navigate(['/user/mailbox/detail']);
   }
 
 }

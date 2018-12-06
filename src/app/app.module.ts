@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 // service
 import { UserService } from './service/user.service';
+import { ProductService } from './service/product.service';
 
 // component
 import { AppComponent } from './app.component';
@@ -38,6 +39,8 @@ import { UserVerifyComponent } from './user-verify/user-verify.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { UserBalanceComponent } from './user-balance/user-balance.component';
 import { UserMailboxNewComponent } from './user-mailbox-new/user-mailbox-new.component';
+import { ProductSearchResultComponent } from './product-search-result/product-search-result.component';
+import { UserPasswordRenewComponent } from './user-password-renew/user-password-renew.component';
 
 
 
@@ -71,7 +74,9 @@ import { UserMailboxNewComponent } from './user-mailbox-new/user-mailbox-new.com
     UserVerifyComponent,
     UserUpdateComponent,
     UserBalanceComponent,
-    UserMailboxNewComponent
+    UserMailboxNewComponent,
+    ProductSearchResultComponent,
+    UserPasswordRenewComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +90,8 @@ import { UserMailboxNewComponent } from './user-mailbox-new/user-mailbox-new.com
     }),
   ],
   providers: [
-    UserService
+    UserService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

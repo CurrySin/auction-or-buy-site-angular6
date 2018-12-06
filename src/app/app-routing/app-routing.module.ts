@@ -15,6 +15,9 @@ import { UserShippingCartComponent } from '../user-shipping-cart/user-shipping-c
 import { UserFavoriteComponent } from '../user-favorite/user-fav.component';
 import { UserMailboxComponent } from '../user-mailbox/user-mailbox.component';
 import { UserMailboxInboxComponent } from '../user-mailbox-inbox/user-mailbox-inbox.component';
+import { UserMailboxDetailComponent } from '../user-mailbox-detail/user-mailbox-detail.component';
+import { ProductSearchResultComponent } from '../product-search-result/product-search-result.component';
+import { UserPasswordRenewComponent } from '../user-password-renew/user-password-renew.component';
 
 const routes: Routes = [
   {
@@ -40,6 +43,9 @@ const routes: Routes = [
       path: 'forgot_password',
       component: UserForgotPasswordComponent
     }, {
+      path: 'passsword_renew',
+      component: UserPasswordRenewComponent
+    }, {
       path: 'update',
       component: UserUpdateComponent
     }, {
@@ -53,13 +59,22 @@ const routes: Routes = [
       component: UserFavoriteComponent
     }, {
       path: 'mailbox',
-      component: UserMailboxInboxComponent
+      children: [{
+        path: '',
+        component: UserMailboxInboxComponent,
+      }, {
+        path: 'detail',
+        component: UserMailboxDetailComponent
+      }]
     }]
   }, {
     path: 'product',
     children: [{
       path: 'create',
       component: ProductCreateComponent
+    }, {
+      path: 'result',
+      component: ProductSearchResultComponent
     }]
   }
 ];

@@ -44,3 +44,9 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.bottom-button-group {
+    position: absolute;
+    bottom: 0px;
+    margin: 10px;
+}

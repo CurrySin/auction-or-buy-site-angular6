@@ -7,26 +7,16 @@ import { first } from 'rxjs/operators';
 declare const $: any;
 
 @Component({
-  selector: 'app-user-mailbox-detail',
-  templateUrl: './user-mailbox-detail.component.html',
-  styleUrls: ['./user-mailbox-detail.component.css']
+  selector: 'app-user-password-renew',
+  templateUrl: './user-password-renew.component.html',
+  styleUrls: ['./user-password-renew.component.css']
 })
-export class UserMailboxDetailComponent implements OnInit {
+export class UserPasswordRenewComponent implements OnInit {
+  username: string;
+  verificationCode: string;
+  newPassword: string;
   dialogTitle: string;
   dialogBody: string;
-  accessToken: string;
-  mail_id: string;
-  mail: any = {
-    _id: '',
-    sender: '',
-    receiver: '',
-    date: '',
-    subject: '',
-    content: '',
-    enroll: '',
-    status: '',
-    active: true
-  };
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,
@@ -35,26 +25,29 @@ export class UserMailboxDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const local_accessToken = localStorage.getItem('accessToken');
-    const local_mail_id = localStorage.getItem('mail_id');
-    if (local_accessToken && local_mail_id ) {
-      this.accessToken = local_accessToken;
-      this.mail_id = local_mail_id;
-      this.userService.getMailById(this.mail_id, this.accessToken)
+  }
+
+  onSubmit() {
+    if (this.username && this.verificationCode && this.newPassword ) {
+      this.spinnerService.show();
+      this.userService.renewPassword(this.username, this.verificationCode, this.newPassword)
             .pipe(first())
             .subscribe(
                 data => {
                     // router to home page
                     this.spinnerService.hide();
-                    this.mail = data;
-                    this.mail.date = new Date(this.mail.date);
+                    this.router.navigate(['/login']);
                 },
                 err => {
                   this.spinnerService.hide();
-                  this.dialogTitle = 'Login Failed';
+                  this.dialogTitle = 'Password renew Failed';
                   this.dialogBody = 'Please try angin';
                   $('#myModal').modal('show');
                 });
+    } else {
+      this.dialogTitle = 'Input messing';
+      this.dialogBody = 'Please input username, verification code, new password';
+      $('#myModal').modal('show');
     }
   }
 

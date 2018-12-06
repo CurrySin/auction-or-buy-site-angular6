@@ -44,7 +44,18 @@ export class UserService {
     }
 
     forgotPassword(username: string) {
-        return this.http.post<any>(`${environment.baseUrl + 'user/' + username + '/forgot_password/renew'}`, {})
+        return this.http.post<any>(`${environment.baseUrl + 'user/' + username + '/forgot_password'}`, {})
+        .pipe(map(result => {
+            return result;
+        }));
+    }
+
+    renewPassword(username: string, verificationCode: string, newPassword: string) {
+        return this.http.post<any>(`${environment.baseUrl + 'user/' + username + '/forgot_password/renew'}`,
+        {
+            verificationCode: verificationCode,
+            newPassword: newPassword
+        })
         .pipe(map(result => {
             return result;
         }));
@@ -105,6 +116,18 @@ export class UserService {
               'token': JSON.parse(token)
         })};
         return this.http.post<any>(`${environment.baseUrl + 'mail/receive/' + username}`, {}, httpOptions)
+        .pipe(map(result => {
+            return result;
+        }));
+    }
+
+    getMailById(mailId: string, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'token': JSON.parse(token)
+        })};
+        return this.http.post<any>(`${environment.baseUrl + 'mail/' + mailId}`, {}, httpOptions)
         .pipe(map(result => {
             return result;
         }));

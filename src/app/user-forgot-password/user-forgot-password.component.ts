@@ -35,7 +35,7 @@ export class UserForgotPasswordComponent implements OnInit {
                     // router to home page
                     this.spinnerService.hide();
                     localStorage.setItem('username', data.username);
-              this.router.navigate(['/user/verify']);
+              this.router.navigate(['/user/passsword_renew']);
                 },
                 err => {
                   this.spinnerService.hide();
