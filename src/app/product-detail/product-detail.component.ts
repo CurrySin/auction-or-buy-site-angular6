@@ -6,16 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  demo_items = [{
-    'id': 1,
-    'name': 'Mustard - Dijon',
-    'pic': 'http://dummyimage.com/200x200.bmp/ff4444/ffffff',
-    'price': 223.07,
-  }];
+  product: any;
 
   constructor() { }
 
   ngOnInit() {
+    const local_product = localStorage.getItem('storage_product');
+    if (local_product) {
+      this.product = JSON.parse(local_product);
+    }
   }
 
 }

@@ -1,12 +1,12 @@
 <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div *ngFor="let item of demo_items" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <form action="/action_page.php">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 back">
                     <a href="/#"><img src="./../../assets/back.jpg" height="50" alt="back" /></a>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <img src="{{item.pic}}" class="item-pic" />
+                    <img src="{{product.image[0]}}" class="item-pic" />
                 </div>
                 <div class="row">
                     <div class="col-25">

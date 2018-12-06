@@ -33,7 +33,7 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
 
   onGoItClicked(product: any) {
     console.log(product);
-    localStorage.setItem('storage_product', product);
+    localStorage.setItem('storage_product', JSON.stringify(product));
     this.router.navigate(['/product/detail']);
   }
 
