@@ -39,6 +39,7 @@ export class ProductCreateComponent implements OnInit {
   refreshToken: string;
   username: string;
   endDate: Date;
+  isError: Boolean = false;
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,
     private productService: ProductService,
@@ -74,7 +75,7 @@ export class ProductCreateComponent implements OnInit {
           sub_category: this.sub_category,
           name: 'none',
           type: this.type,
-          price: 'none',
+          price: this.per_bid,
           quantity: this.quantity,
           shipping_included: false,
           status: 'on_sell',
@@ -130,12 +131,18 @@ export class ProductCreateComponent implements OnInit {
                       this.dialogTitle = 'Login Failed';
                       this.dialogBody = 'Please try angin';
                       $('#myModal').modal('show');
+                      this.userService.logout().then(res => {
+                        this.isError = true;
+                      });
                     });
               }
               this.spinnerService.hide();
               this.dialogTitle = 'Login Failed';
               this.dialogBody = 'Please try angin';
               $('#myModal').modal('show');
+              this.userService.logout().then(res => {
+                this.isError = true;
+              });
             });
       } else {
         this.dialogTitle = 'Input messing';
@@ -206,12 +213,18 @@ export class ProductCreateComponent implements OnInit {
                       this.dialogTitle = 'Login Failed';
                       this.dialogBody = 'Please try angin';
                       $('#myModal').modal('show');
+                      this.userService.logout().then(res => {
+                        this.isError = true;
+                      });
                     });
               }
               this.spinnerService.hide();
               this.dialogTitle = 'Login Failed';
               this.dialogBody = 'Please try angin';
               $('#myModal').modal('show');
+              this.userService.logout().then(res => {
+                this.isError = true;
+              });
             });
       } else {
         this.dialogTitle = 'Input messing';
@@ -219,6 +232,10 @@ export class ProductCreateComponent implements OnInit {
         $('#myModal').modal('show');
       }
     }
+  }
+
+  onCloseClikced() {
+    this.router.navigate(['/login']);
   }
 }
 class NGIfElse {

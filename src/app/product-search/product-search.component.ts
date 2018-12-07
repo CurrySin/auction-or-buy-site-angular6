@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { UserService } from './../service/user.service';
 import { ProductService } from './../service/product.service';
 import { first } from 'rxjs/operators';
 
@@ -17,11 +18,12 @@ export class ProductSearchComponent implements OnInit {
   searchKey: string;
   @Output() searchChange: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
   private productList: Array<any>;
-
+  isError: Boolean = false;
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,
     private productService: ProductService,
+    private userService: UserService,
     private router: Router
   ) { }
 
@@ -53,11 +55,18 @@ export class ProductSearchComponent implements OnInit {
             this.dialogTitle = 'Login Failed';
             this.dialogBody = 'Please try angin';
             $('#myModal').modal('show');
+            this.userService.logout().then(res => {
+              this.isError = true;
+            });
           });
     } else {
       this.dialogTitle = 'Input messing';
       this.dialogBody = 'Please input key to search';
       $('#myModal').modal('show');
     }
+  }
+
+  onCloseClikced() {
+    this.router.navigate(['/login']);
   }
 }

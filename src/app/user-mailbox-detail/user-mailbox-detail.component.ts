@@ -27,6 +27,7 @@ export class UserMailboxDetailComponent implements OnInit {
     status: '',
     active: true
   };
+  isError: Boolean = false;
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,
@@ -54,8 +55,15 @@ export class UserMailboxDetailComponent implements OnInit {
                   this.dialogTitle = 'Login Failed';
                   this.dialogBody = 'Please try angin';
                   $('#myModal').modal('show');
+                  this.userService.logout().then(res => {
+                    this.isError = true;
+                  });
                 });
     }
+  }
+
+  onCloseClikced() {
+    this.router.navigate(['/login']);
   }
 
 }

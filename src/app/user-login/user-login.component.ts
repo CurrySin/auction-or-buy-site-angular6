@@ -16,6 +16,7 @@ export class UserLoginComponent implements OnInit {
   password: string;
   dialogTitle: string;
   dialogBody: string;
+  isError: Boolean = false;
 
   constructor(
     private spinnerService: Ng4LoadingSpinnerService,
@@ -47,6 +48,9 @@ export class UserLoginComponent implements OnInit {
                   this.dialogTitle = 'Login Failed';
                   this.dialogBody = 'Please try angin';
                   $('#myModal').modal('show');
+                  this.userService.logout().then(res => {
+                    this.isError = true;
+                  });
                 });
     } else {
       this.dialogTitle = 'Input messing';

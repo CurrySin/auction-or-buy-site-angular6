@@ -52,4 +52,15 @@ export class ProductService {
             return products;
         }));
     }
+
+    buyAProduct(username: string, productId: string, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'token': JSON.parse(token)
+        })};
+        return this.http.post<any>(`${environment.baseUrl + 'products/buy/' + username + '/' + productId}`, {}, httpOptions)
+        .pipe(map(result => {
+            return result;
+        }));
+    }
 }
