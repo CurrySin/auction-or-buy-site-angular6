@@ -1,0 +1,17 @@
+.container {
+    padding: 30px;
+    padding-top: 50px;
+    background: rgb(185, 219, 213);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+table:hover {
+    opacity: 0.8;
+}
+
+button {
+    width: 100%;
+    background-color: darkcyan;
+}

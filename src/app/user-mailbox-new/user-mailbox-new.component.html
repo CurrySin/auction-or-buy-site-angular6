@@ -4,28 +4,30 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <div class=".but">
-                <button type="button" data-toggle="New collapse" data-target="#new" class="btn btn-primary" [routerLink]="['/inbox']" routerLink="active">
-                        <i class="fas fa-at"></i> <a>Sent</a>
-                    </button>
 
-                <button type="button" data-toggle="inbox collapse" data-target="#inbox" class="btn btn-primary" [routerLink]="['/inbox']" routerLink="active">
-                        <i class="far fa-envelope-open"></i><a>Inbox</a>
-                    </button>
+            <button type="button" data-toggle="New collapse" data-target="#new" class="btn btn-primary" [routerLink]="['/user/mailbox/sent']" routerLink="active">
+                                <i class="fas fa-at"></i> <a>Sent</a>
+                            </button>
 
-                <button type="button" data-toggle="outbox collapse" data-target="#outbox" class="btn btn-primary" [routerLink]="['/outbox']" routerLink="active">
-                        <i class="fas fa-envelope"></i><a>Outbox</a>
-                    </button>
-            </div>
+            <button type="button" data-toggle="inbox collapse" data-target="#inbox" class="btn btn-primary" [routerLink]="['/user/mailbox']" routerLink="active">
+                                <i class="far fa-envelope-open"></i><a>Inbox</a>
+                            </button>
+
+            <button type="button" data-toggle="outbox collapse" data-target="#outbox" class="btn btn-primary" [routerLink]="['/user/mailbox/outbox']" routerLink="active">
+                                <i class="fas fa-envelope"></i><a>Outbox</a>
+                            </button>
+
         </div>
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="border-style:ridge">
             <div class="Message">
-                <label>Sender:Current Username</label>
-                <input type="text" placeholder="Recieve Username">
-                <input type="text" placeholder="Title">
-                <textarea type="text" rows="5" cols="10">
-                    Mail Content
+                <label>Sender:Current Username</label><br>
+                <input type="text" placeholder="Recieve Username" [(ngModel)]="recieve"><br><br>
+                <input type="text" placeholder="Subject" [(ngModel)]="subject"><br><br>
+                <textarea type="text" rows="7" cols="25" placeholder="Mail Content" [(ngModel)]="content">
                   </textarea>
+                <button type="button" class="btn btn-primary">
+                      <i class="fas fa-at"></i><a>Submit</a>
+                  </button>
             </div>
         </div>
     </div>

@@ -19,6 +19,8 @@ import { UserMailboxDetailComponent } from '../user-mailbox-detail/user-mailbox-
 import { ProductSearchResultComponent } from '../product-search-result/product-search-result.component';
 import { UserPasswordRenewComponent } from '../user-password-renew/user-password-renew.component';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { UserMailboxNewComponent } from '../user-mailbox-new/user-mailbox-new.component';
+import { UserMailboxOutboxComponent } from '../user-mailbox-outbox/user-mailbox-outbox.component';
 
 const routes: Routes = [
   {
@@ -66,7 +68,16 @@ const routes: Routes = [
       }, {
         path: 'detail',
         component: UserMailboxDetailComponent
-      }]
+      },
+        {
+          path: 'sent',
+          component: UserMailboxNewComponent
+        },
+        {
+          path: 'outbox',
+          component: UserMailboxOutboxComponent
+        },
+    ]
     }]
   }, {
     path: 'product',
